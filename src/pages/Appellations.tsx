@@ -122,7 +122,13 @@ export default function Appellations() {
               <p className="text-[10px] font-bold text-stone-400 uppercase tracking-tighter">{app.region}</p>
             </div>
             <div className="text-right">
-              <span className="text-[10px] bg-vin-bordeaux/5 text-vin-bordeaux px-2 py-1 rounded font-bold">
+              <span className={`text-[10px] px-2 py-1 rounded font-bold border ${
+                app.style.toLowerCase().includes('blanc') 
+                  ? 'bg-yellow-50 text-yellow-700' 
+                  : app.style.toLowerCase().includes('liquoreux')
+                  ? 'bg-amber-50 text-amber-700'
+                  : 'bg-vin-bordeaux/5 text-vin-bordeaux'
+              }`}>
                 {app.style}
               </span>
             </div>

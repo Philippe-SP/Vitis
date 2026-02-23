@@ -12,3 +12,14 @@ export interface Appellation {
   cepages: string[];
   description: string;
 }
+
+export interface Note {
+  id: string;
+  nom: string;
+  appellation: string;
+  domaine: string;
+  millesime: number;
+  date: string;
+  noteGlobale: number; // sur 5
+  commentaire: string;
+}
