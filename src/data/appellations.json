@@ -1,0 +1,42 @@
+[
+  { "nom": "Saint-Émilion", "region": "Bordeaux", "style": "Rouge élégant", "cepages": ["Merlot", "Cabernet Franc"], "description": "Le royaume du Merlot. Des vins souples, veloutés, avec des notes de prune et de truffe." },
+  { "nom": "Pomerol", "region": "Bordeaux", "style": "Rouge charnu", "cepages": ["Merlot"], "description": "Des vins intenses et rares. Velouté exceptionnel, arômes de violette et de petits fruits rouges." },
+  { "nom": "Pessac-Léognan", "region": "Bordeaux", "style": "Rouge fumé / Blanc gras", "cepages": ["Cabernet Sauvignon", "Merlot", "Sauvignon"], "description": "Célèbre pour son terroir de graves qui donne une note 'fumée' unique aux vins rouges." },
+  { "nom": "Haut-Médoc", "region": "Bordeaux", "style": "Rouge de garde", "cepages": ["Cabernet Sauvignon", "Merlot"], "description": "Des vins structurés et puissants. C'est ici que l'on trouve les plus grands châteaux du monde." },
+  { "nom": "Sauternes", "region": "Bordeaux", "style": "Liquoreux", "cepages": ["Sémillon", "Sauvignon"], "description": "Le roi des vins dorés. Arômes de fruits confits, de miel et d'abricot sec." },
+  { "nom": "Lalande-de-Pomerol", "region": "Bordeaux", "style": "Rouge gourmand", "cepages": ["Merlot"], "description": "Le 'satellite' de Pomerol. Excellent rapport qualité-prix, plus accessible et très fruité." },
+
+  { "nom": "Chablis", "region": "Bourgogne", "style": "Blanc minéral", "cepages": ["Chardonnay"], "description": "Le blanc pur. Notes de pierre à fusil, très sec et vif. Parfait avec des huîtres." },
+  { "nom": "Meursault", "region": "Bourgogne", "style": "Blanc onctueux", "cepages": ["Chardonnay"], "description": "Le sommet des blancs beurrés et noisettés. Un vin gras et d'une immense complexité." },
+  { "nom": "Gevrey-Chambertin", "region": "Bourgogne", "style": "Rouge puissant", "cepages": ["Pinot Noir"], "description": "Le plus robuste des Pinots Noirs de Bourgogne. Des notes de réglisse et de cuir." },
+  { "nom": "Pommard", "region": "Bourgogne", "style": "Rouge charpenté", "cepages": ["Pinot Noir"], "description": "Réputé pour être le plus 'masculin' des vins de Bourgogne, avec des tanins fermes." },
+  { "nom": "Mercurey", "region": "Bourgogne", "style": "Rouge croquant", "cepages": ["Pinot Noir"], "description": "La pépite de la Côte Chalonnaise. Très axé sur le fruit rouge sauvage." },
+  { "nom": "Saint-Véran", "region": "Bourgogne", "style": "Blanc floral", "cepages": ["Chardonnay"], "description": "Un vin du sud de la Bourgogne, plus solaire, avec des notes de fleurs blanches." },
+
+  { "nom": "Châteauneuf-du-Pape", "region": "Vallée du Rhône", "style": "Rouge solaire", "cepages": ["Grenache", "Syrah", "Mourvèdre"], "description": "Le colosse du sud. Des vins puissants, chauds, marqués par les galets roulés." },
+  { "nom": "Côte-Rôtie", "region": "Vallée du Rhône", "style": "Rouge prestigieux", "cepages": ["Syrah", "Viognier"], "description": "La Syrah sur des pentes abruptes. Notes de lard fumé, de violette et de poivre." },
+  { "nom": "Crozes-Hermitage", "region": "Vallée du Rhône", "style": "Rouge fruité", "cepages": ["Syrah"], "description": "L'appellation plaisir du Rhône Nord. Très poivré et plein de fruits noirs." },
+  { "nom": "Gigondas", "region": "Vallée du Rhône", "style": "Rouge musclé", "cepages": ["Grenache", "Syrah"], "description": "Le petit frère de Châteauneuf. Très épicé, avec beaucoup de corps." },
+  { "nom": "Saint-Joseph", "region": "Vallée du Rhône", "style": "Rouge équilibré", "cepages": ["Syrah"], "description": "Une Syrah élégante et minérale sur des sols de granit. Très floral." },
+  { "nom": "Condrieu", "region": "Vallée du Rhône", "style": "Blanc aromatique", "cepages": ["Viognier"], "description": "Le royaume mondial du Viognier. Arômes explosifs d'abricot et de pêche." },
+
+  { "nom": "Riesling d'Alsace", "region": "Alsace", "style": "Blanc sec & racé", "cepages": ["Riesling"], "description": "Le roi d'Alsace. Vin très sec, avec une acidité fine et des notes d'agrumes ou pétrolées." },
+  { "nom": "Gewurztraminer", "region": "Alsace", "style": "Blanc exubérant", "cepages": ["Gewurztraminer"], "description": "Une explosion d'arômes : litchi, rose et épices. Souvent avec une pointe de sucre." },
+  { "nom": "Pinot Gris d'Alsace", "region": "Alsace", "style": "Blanc puissant", "cepages": ["Pinot Gris"], "description": "Un vin riche et charpenté, avec des notes de sous-bois et de fruits secs." },
+  { "nom": "Crémant d'Alsace", "region": "Alsace", "style": "Effervescent", "cepages": ["Pinot Blanc", "Auxerrois"], "description": "La bulle alsacienne. Frais, fin et parfait pour l'apéritif à prix doux." },
+
+  { "nom": "Bandol", "region": "Provence", "style": "Rouge de caractère", "cepages": ["Mourvèdre"], "description": "Le grand rouge de Provence. Puissant, sauvage, avec des notes de cuir et de fruits noirs." },
+  { "nom": "Côtes de Provence", "region": "Provence", "style": "Rosé iconique", "cepages": ["Grenache", "Cinsault", "Syrah"], "description": "La référence mondiale du rosé. Frais, élégant, sur les petits fruits rouges et les agrumes." },
+  { "nom": "Coteaux d'Aix-en-Provence", "region": "Provence", "style": "Rosé/Rouge frais", "cepages": ["Grenache", "Syrah"], "description": "Des vins ensoleillés mais portés par une belle fraîcheur calcaire." },
+  { "nom": "Palette", "region": "Provence", "style": "Prestigieux", "cepages": ["Mourvèdre", "Grenache"], "description": "Une petite pépite près d'Aix. Des vins complexes, profonds et rares." },
+
+  { "nom": "Cahors", "region": "Sud-Ouest", "style": "Rouge intense", "cepages": ["Malbec"], "description": "Le 'vin noir'. Des vins charpentés avec beaucoup de corps et des notes de prune." },
+  { "nom": "Madiran", "region": "Sud-Ouest", "style": "Rouge puissant", "cepages": ["Tannat"], "description": "Un vin très tannique et robuste, idéal pour le confit de canard." },
+  { "nom": "Jurançon Sec", "region": "Sud-Ouest", "style": "Blanc tonique", "cepages": ["Gros Manseng", "Petit Manseng"], "description": "Un vin blanc vif avec des arômes exotiques et de fruits de la passion." },
+  { "nom": "Monbazillac", "region": "Sud-Ouest", "style": "Liquoreux", "cepages": ["Sémillon", "Muscadelle"], "description": "Le cousin abordable du Sauternes. Miel, abricot et fleurs blanches." },
+
+  { "nom": "Morgon", "region": "Beaujolais", "style": "Rouge charnu", "cepages": ["Gamay"], "description": "Un vin qui a du fond. On dit qu'il 'morgonne' car il développe des arômes de cerise à l'eau de vie." },
+  { "nom": "Fleurie", "region": "Beaujolais", "style": "Rouge soyeux", "cepages": ["Gamay"], "description": "Le plus féminin des crus. Très floral (iris, violette) et très élégant." },
+  { "nom": "Moulin-à-Vent", "region": "Beaujolais", "style": "Rouge de garde", "cepages": ["Gamay"], "description": "Le seigneur du Beaujolais. Charpenté, il peut vieillir comme un grand Bourgogne." },
+  { "nom": "Brouilly", "region": "Beaujolais", "style": "Rouge plaisir", "cepages": ["Gamay"], "description": "Le vin de copain par excellence. Très porté sur le fruit rouge frais et la gourmandise." }
+]

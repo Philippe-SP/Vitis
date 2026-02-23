@@ -1,0 +1,17 @@
+[
+  { "nom": "Syrah", "type": "Rouge", "regions": ["Vallée du Rhône", "Languedoc"], "aromes": "Poivre noir, violette, réglisse" },
+  { "nom": "Chardonnay", "type": "Blanc", "regions": ["Bourgogne", "Champagne", "Jura", "Languedoc"], "aromes": "Beurre, pomme, noisette" },
+  { "nom": "Pinot Noir", "type": "Rouge", "regions": ["Bourgogne", "Alsace", "Loire"], "aromes": "Cerise, framboise, sous-bois" },
+  { "nom": "Cabernet Sauvignon", "type": "Rouge", "regions": ["Bordeaux", "Provence"], "aromes": "Cassis, cèdre" },
+  { "nom": "Sauvignon Blanc", "type": "Blanc", "regions": ["Loire", "Bordeaux"], "aromes": "Agrumes, pierre à fusil" },
+  { "nom": "Grenache", "type": "Rouge", "regions": ["Rhône", "Languedoc", "Roussillon"], "aromes": "Épices, fruits rouges" },
+  { "nom": "Malbec", "type": "Rouge", "regions": ["Sud-Ouest (Cahors)"], "aromes": "Prune, violette" },
+  { "nom": "Chenin", "type": "Blanc", "regions": ["Loire"], "aromes": "Pomme, miel, coing" },
+  { "nom": "Gamay", "type": "Rouge", "regions": ["Beaujolais", "Auvergne"], "aromes": "Fraise, pivoine" },
+  { "nom": "Viognier", "type": "Blanc", "regions": ["Rhône", "Languedoc"], "aromes": "Abricot, pêche" },
+  { "nom": "Mourvèdre", "type": "Rouge", "regions": ["Provence (Bandol)", "Rhône"], "aromes": "Cuir, fruits noirs" },
+  { "nom": "Gewurztraminer", "type": "Blanc", "regions": ["Alsace"], "aromes": "Litchi, rose, épices" },
+  { "nom": "Cabernet Franc", "type": "Rouge", "regions": ["Loire", "Bordeaux"], "aromes": "Poivron rouge, framboise" },
+  { "nom": "Aligoté", "type": "Blanc", "regions": ["Bourgogne"], "aromes": "Citron, pomme verte" },
+  { "nom": "Jacquère", "type": "Blanc", "regions": ["Savoie"], "aromes": "Fleurs blanches, minéral" }
+]
