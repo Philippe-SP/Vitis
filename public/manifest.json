@@ -1,0 +1,16 @@
+{
+  "short_name": "Vitis",
+  "name": "Vitis - Carnet de dégustation",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#641212",
+  "background_color": "#F9F8F7"
+}

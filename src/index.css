@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  /* On déclare tes variables de couleurs ici */
+  --color-vin-beige: #F9F8F7;
+  --color-vin-bordeaux: #641212;
+  --font-serif: "Georgia", serif;
+}
+
+body {
+  /* On utilise les variables déclarées au-dessus */
+  background-color: var(--color-vin-beige);
+  color: #292524; /* Un gris pierre sombre */
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
