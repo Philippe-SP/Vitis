@@ -3,7 +3,7 @@
   "name": "Vitis - Carnet de dégustation",
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "vitis_logo.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
