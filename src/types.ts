@@ -23,3 +23,10 @@ export interface Note {
   noteGlobale: number; // sur 5
   commentaire: string;
 }
+
+export interface Accord {
+  nom: string;
+  famille: string;
+  vins: string[];
+  conseil: string;
+}

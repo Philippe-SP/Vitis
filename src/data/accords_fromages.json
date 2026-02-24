@@ -1,0 +1,44 @@
+[
+  {
+    "nom": "Comté (Vieux 24-36 mois)",
+    "famille": "Pâte pressée cuite",
+    "vins": ["Vin Jaune (Jura)", "Meursault", "Arbois Blanc"],
+    "conseil": "Le côté noisette du fromage appelle des vins blancs puissants ou oxydatifs."
+  },
+  {
+    "nom": "Mimolette Vieille",
+    "famille": "Pâte pressée non cuite",
+    "vins": ["Bordeaux Rouge évolué", "Haut-Médoc", "Cahors"],
+    "conseil": "Un des rares cas où un rouge charpenté fonctionne grâce à la texture cassante et saline du fromage."
+  },
+  {
+    "nom": "Roquefort",
+    "famille": "Pâte persillée",
+    "vins": ["Sauternes", "Banyuls", "Porto Blanc"],
+    "conseil": "L'accord mythique sel/sucre. Le vin liquoreux vient calmer le piquant du bleu."
+  },
+  {
+    "nom": "Époisses / Maroilles",
+    "famille": "Pâte molle à croûte lavée",
+    "vins": ["Marc de Bourgogne", "Gewurztraminer (Sec)", "Pinot Noir puissant"],
+    "conseil": "Fromages très forts qui demandent des vins avec du répondant aromatique."
+  },
+  {
+    "nom": "Camembert au lait cru",
+    "famille": "Pâte molle à croûte fleurie",
+    "vins": ["Cidre Brut", "Saint-Émilion", "Champagne Blanc de Noirs"],
+    "conseil": "Le rouge doit avoir des tanins très souples (Merlot) pour ne pas heurter la croûte."
+  },
+  {
+    "nom": "Crottin de Chavignol",
+    "famille": "Chèvre",
+    "vins": ["Sancerre Blanc", "Pouilly-Fumé"],
+    "conseil": "L'accord régional parfait : le Sauvignon Blanc de la Loire et le chèvre."
+  },
+  {
+    "nom": "Ossau-Iraty",
+    "famille": "Brebis",
+    "vins": ["Irouléguy Blanc", "Jurançon Sec"],
+    "conseil": "Les vins blancs du Sud-Ouest avec leur vivacité tranchent bien le gras du brebis."
+  }
+]

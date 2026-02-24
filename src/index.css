@@ -1,15 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  /* On déclare tes variables de couleurs ici */
-  --color-vin-beige: #F9F8F7;
+  /* Définition de tes couleurs personnalisées */
+  --color-vin-beige: #f5f2ed;
   --color-vin-bordeaux: #641212;
-  --font-serif: "Georgia", serif;
+  
+  /* Définition de ta police Serif */
+  --font-serif: "Georgia", "serif";
 }
 
-body {
-  /* On utilise les variables déclarées au-dessus */
-  background-color: var(--color-vin-beige);
-  color: #292524; /* Un gris pierre sombre */
-  font-family: ui-sans-serif, system-ui, sans-serif;
+/* Application globale du fond sur le body */
+@layer base {
+  body {
+    background-color: var(--color-vin-beige);
+    color: var(--color-stone-800);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Petit bonus : Effet de texture papier subtil */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  z-index: 9999;
 }
