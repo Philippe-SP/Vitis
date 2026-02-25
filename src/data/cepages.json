@@ -1,17 +1,122 @@
 [
-  { "nom": "Syrah", "type": "Rouge", "regions": ["Vallée du Rhône", "Languedoc"], "aromes": "Poivre noir, violette, réglisse" },
-  { "nom": "Chardonnay", "type": "Blanc", "regions": ["Bourgogne", "Champagne", "Jura", "Languedoc"], "aromes": "Beurre, pomme, noisette" },
-  { "nom": "Pinot Noir", "type": "Rouge", "regions": ["Bourgogne", "Alsace", "Loire"], "aromes": "Cerise, framboise, sous-bois" },
-  { "nom": "Cabernet Sauvignon", "type": "Rouge", "regions": ["Bordeaux", "Provence"], "aromes": "Cassis, cèdre" },
-  { "nom": "Sauvignon Blanc", "type": "Blanc", "regions": ["Loire", "Bordeaux"], "aromes": "Agrumes, pierre à fusil" },
-  { "nom": "Grenache", "type": "Rouge", "regions": ["Rhône", "Languedoc", "Roussillon"], "aromes": "Épices, fruits rouges" },
-  { "nom": "Malbec", "type": "Rouge", "regions": ["Sud-Ouest (Cahors)"], "aromes": "Prune, violette" },
-  { "nom": "Chenin", "type": "Blanc", "regions": ["Loire"], "aromes": "Pomme, miel, coing" },
-  { "nom": "Gamay", "type": "Rouge", "regions": ["Beaujolais", "Auvergne"], "aromes": "Fraise, pivoine" },
-  { "nom": "Viognier", "type": "Blanc", "regions": ["Rhône", "Languedoc"], "aromes": "Abricot, pêche" },
-  { "nom": "Mourvèdre", "type": "Rouge", "regions": ["Provence (Bandol)", "Rhône"], "aromes": "Cuir, fruits noirs" },
-  { "nom": "Gewurztraminer", "type": "Blanc", "regions": ["Alsace"], "aromes": "Litchi, rose, épices" },
-  { "nom": "Cabernet Franc", "type": "Rouge", "regions": ["Loire", "Bordeaux"], "aromes": "Poivron rouge, framboise" },
-  { "nom": "Aligoté", "type": "Blanc", "regions": ["Bourgogne"], "aromes": "Citron, pomme verte" },
-  { "nom": "Jacquère", "type": "Blanc", "regions": ["Savoie"], "aromes": "Fleurs blanches, minéral" }
+  {
+    "nom": "Syrah",
+    "type": "Rouge",
+    "regions": ["Vallée du Rhône", "Languedoc", "Provence"],
+    "aromes": ["Poivre noir", "Violette", "Réglisse", "Framboise noire"],
+    "profil": { "corps": 4, "tanins": 4, "acidite": 3, "puissance": 5 },
+    "description": "Puissante et sombre, la Syrah est célèbre pour son nez poivré. Au Nord du Rhône, elle est élégante et florale ; au Sud, elle est plus charnue et épicée."
+  },
+  {
+    "nom": "Chardonnay",
+    "type": "Blanc",
+    "regions": ["Bourgogne", "Champagne", "Jura", "Languedoc"],
+    "aromes": ["Beurre", "Pomme", "Noisette", "Agrumes"],
+    "profil": { "corps": 4, "tanins": 0, "acidite": 3, "puissance": 4 },
+    "description": "Le caméléon des cépages blancs. Il peut être très vif et minéral (Chablis) ou riche, beurré et onctueux après un passage en fût de chêne."
+  },
+  {
+    "nom": "Pinot Noir",
+    "type": "Rouge",
+    "regions": ["Bourgogne", "Alsace", "Loire"],
+    "aromes": ["Cerise", "Framboise", "Sous-bois", "Pivoine"],
+    "profil": { "corps": 2, "tanins": 2, "acidite": 4, "puissance": 3 },
+    "description": "Le cépage de la finesse. Sa peau fine donne des vins peu colorés mais extrêmement complexes, parfumés et portés sur la fraîcheur."
+  },
+  {
+    "nom": "Cabernet Sauvignon",
+    "type": "Rouge",
+    "regions": ["Bordeaux", "Provence", "Languedoc"],
+    "aromes": ["Cassis", "Cèdre", "Poivron vert", "Mine de crayon"],
+    "profil": { "corps": 5, "tanins": 5, "acidite": 3, "puissance": 5 },
+    "description": "Le roi des vins de garde. Il apporte structure, acidité et des tanins puissants qui s'assouplissent magnifiquement avec le temps."
+  },
+  {
+    "nom": "Sauvignon Blanc",
+    "type": "Blanc",
+    "regions": ["Loire", "Bordeaux"],
+    "aromes": ["Buis", "Agrumes", "Pierre à fusil", "Asperge"],
+    "profil": { "corps": 2, "tanins": 0, "acidite": 5, "puissance": 4 },
+    "description": "Reconnaissable entre mille par sa vivacité et ses notes végétales nobles. Il donne des vins très secs, nerveux et extrêmement rafraîchissants."
+  },
+  {
+    "nom": "Grenache",
+    "type": "Rouge",
+    "regions": ["Rhône", "Languedoc", "Roussillon", "Provence"],
+    "aromes": ["Fraise écrasée", "Épices douces", "Poivre", "Garrigue"],
+    "profil": { "corps": 4, "tanins": 2, "acidite": 2, "puissance": 4 },
+    "description": "Le cépage généreux du Sud. Il apporte rondeur, alcool et gourmandise. C'est la base des grands vins de la Vallée du Rhône méridionale."
+  },
+  {
+    "nom": "Malbec",
+    "type": "Rouge",
+    "regions": ["Sud-Ouest (Cahors)", "Bordeaux"],
+    "aromes": ["Prune", "Violette", "Tabac", "Cacao"],
+    "profil": { "corps": 4, "tanins": 4, "acidite": 3, "puissance": 4 },
+    "description": "Aussi appelé 'Cot'. Il donne des vins à la couleur presque noire, très riches en antioxydants, avec une texture veloutée et profonde."
+  },
+  {
+    "nom": "Chenin",
+    "type": "Blanc",
+    "regions": ["Loire"],
+    "aromes": ["Pomme", "Miel", "Coing", "Laine mouillée"],
+    "profil": { "corps": 3, "tanins": 0, "acidite": 5, "puissance": 4 },
+    "description": "Le grand cépage de la Loire. Capable du meilleur en sec, en moelleux ou en bulles, il garde toujours une acidité tranchante et élégante."
+  },
+  {
+    "nom": "Gamay",
+    "type": "Rouge",
+    "regions": ["Beaujolais", "Loire", "Auvergne"],
+    "aromes": ["Fraise", "Pivoine", "Banane", "Bonbon anglais"],
+    "profil": { "corps": 2, "tanins": 1, "acidite": 4, "puissance": 3 },
+    "description": "Le cépage du plaisir immédiat. Peu tannique, très fruité et gouleyant, il est l'âme des 10 crus du Beaujolais."
+  },
+  {
+    "nom": "Viognier",
+    "type": "Blanc",
+    "regions": ["Rhône", "Languedoc"],
+    "aromes": ["Abricot", "Pêche blanche", "Chèvrefeuille"],
+    "profil": { "corps": 4, "tanins": 0, "acidite": 1, "puissance": 5 },
+    "description": "Un cépage blanc atypique, très peu acide mais extrêmement aromatique. On a l'impression de plonger le nez dans un panier de fruits jaunes."
+  },
+  {
+    "nom": "Mourvèdre",
+    "type": "Rouge",
+    "regions": ["Provence (Bandol)", "Rhône", "Languedoc"],
+    "aromes": ["Cuir", "Fruits noirs", "Sous-bois", "Épices"],
+    "profil": { "corps": 5, "tanins": 5, "acidite": 3, "puissance": 5 },
+    "description": "Cépage sauvage et exigeant qui a besoin de 'voir la mer' pour mûrir. Il donne des vins puissants avec un immense potentiel de garde."
+  },
+  {
+    "nom": "Gewurztraminer",
+    "type": "Blanc",
+    "regions": ["Alsace"],
+    "aromes": ["Litchi", "Rose", "Pain d'épices", "Mangue"],
+    "profil": { "corps": 4, "tanins": 0, "acidite": 1, "puissance": 5 },
+    "description": "Le plus exubérant de tous. Son bouquet est si intense qu'il est impossible de se tromper. Souvent puissant et parfois légèrement sucré."
+  },
+  {
+    "nom": "Cabernet Franc",
+    "type": "Rouge",
+    "regions": ["Loire", "Bordeaux"],
+    "aromes": ["Poivron rouge", "Framboise", "Crayon de papier"],
+    "profil": { "corps": 3, "tanins": 3, "acidite": 4, "puissance": 4 },
+    "description": "Plus fin et floral que son cousin le Sauvignon, il apporte de la fraîcheur et des notes végétales élégantes aux vins de Loire et de St-Émilion."
+  },
+  {
+    "nom": "Aligoté",
+    "type": "Blanc",
+    "regions": ["Bourgogne"],
+    "aromes": ["Citron", "Pomme verte", "Fleurs blanches"],
+    "profil": { "corps": 2, "tanins": 0, "acidite": 5, "puissance": 2 },
+    "description": "Le second cépage blanc de Bourgogne. Très vif, nerveux et minéral, il est parfait pour le Kir ou pour accompagner des fruits de mer."
+  },
+  {
+    "nom": "Jacquère",
+    "type": "Blanc",
+    "regions": ["Savoie"],
+    "aromes": ["Pierre", "Citron", "Fleurs de montagne"],
+    "profil": { "corps": 1, "tanins": 0, "acidite": 5, "puissance": 2 },
+    "description": "Le vin de montagne par excellence. Très léger, cristallin et perlant, c'est le compagnon idéal de la fondue ou de la raclette."
+  }
 ]
