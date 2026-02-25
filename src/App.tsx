@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Wine, UtensilsCrossed, Droplets, PenLine, Grape } from 'lucide-react';
 import Cepages from './pages/Cepages';
 import Notes from './pages/Notes';
-import Appellations from './pages/Appellations';
+import Appellations from './pages/Vins';
 import Accords from './pages/Accords';
 
 function App() {
