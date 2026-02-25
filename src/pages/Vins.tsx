@@ -12,15 +12,78 @@ import imgProvence from '../assets/maps/provence.png';
 import imgBeaujolais from '../assets/maps/beaujolais.jpg';
 
 const regions = [
-  { id: 'bordeaux', nom: 'Bordeaux', geo: 'Rive Gauche vs Droite', desc: 'Cabernet à gauche (structure), Merlot à droite (souplesse).', color: 'bg-red-900', image: imgBordeaux },
-  { id: 'bourgogne', nom: 'Bourgogne', geo: 'La Côte d\'Or', desc: 'Le royaume du monocépage : Pinot Noir (rouge) et Chardonnay (blanc).', color: 'bg-red-800', image: imgBourgogne },
-  { id: 'rhone', nom: 'Rhône', geo: 'Nord vs Sud', desc: 'Syrah au Nord (pentes), Grenache au Sud (soleil).', color: 'bg-red-700', image: imgRhone },
-  { id: 'loire', nom: 'Loire', geo: 'Le long du fleuve', desc: 'Vins frais et variés. Sauvignon, Chenin et Cabernet Franc dominent.', color: 'bg-emerald-800', image: imgLoire },
-  { id: 'alsace', nom: 'Alsace', geo: 'Coteaux sous-vosgiens', desc: 'Région de blancs aromatiques identifiés par leurs cépages (Riesling, Gewurztraminer).', color: 'bg-amber-600', image: null },
-  { id: 'beaujolais', nom: 'Beaujolais', geo: 'Le Sud de la Bourgogne', desc: 'Le paradis du Gamay sur sols granitiques. 10 Crus d\'exception.', color: 'bg-purple-900', image: imgBeaujolais },
-  { id: 'languedoc', nom: 'Languedoc', geo: 'L\'arc méditerranéen', desc: 'Vins solaires et sauvages. Grande diversité de terroirs.', color: 'bg-orange-900', image: imgLanguedoc },
-  { id: 'provence', nom: 'Provence', geo: 'Vins de Soleil', desc: 'Spécialiste mondial du rosé, mais de très grands rouges (Bandol).', color: 'bg-pink-700', image: imgProvence },
-  { id: 'sud-ouest', nom: 'Sud Ouest', geo: 'Terroirs de caractère', desc: 'Berceau du Malbec et du Tannat. Vins puissants et authentiques.', color: 'bg-stone-800', image: imgSudOuest },
+  { 
+    id: 'bordeaux', 
+    nom: 'Bordeaux', 
+    geo: 'Rive Gauche vs Droite', 
+    desc: 'À gauche du fleuve (Médoc), les vins sont "carrés", tanniques et puissants. À droite (St-Émilion), ils sont plus ronds, veloutés et portés sur la prune.', 
+    color: 'bg-red-900', 
+    image: imgBordeaux 
+  },
+  { 
+    id: 'bourgogne', 
+    nom: 'Bourgogne', 
+    geo: 'La Côte d\'Or', 
+    desc: 'Plus tu montes vers le milieu du coteau, plus le vin gagne en finesse et en élégance. En bas de pente, les vins sont plus charnus et simples.', 
+    color: 'bg-red-800', 
+    image: imgBourgogne 
+  },
+  { 
+    id: 'rhone', 
+    nom: 'Rhône', 
+    geo: 'Nord vs Sud', 
+    desc: 'Le Nord produit des rouges "poivrés" et vifs (Syrah). Le Sud donne des vins beaucoup plus chaleureux, riches en alcool et chargés d\'épices douces.', 
+    color: 'bg-red-700', 
+    image: imgRhone 
+  },
+  { 
+    id: 'loire', 
+    nom: 'Loire', 
+    geo: 'Le long du fleuve', 
+    desc: 'Plus tu t\'enfonces dans les terres (vers l\'Est), plus les blancs perdent leur côté "citronné/iodé" pour devenir minéraux et très complexes.', 
+    color: 'bg-emerald-800', 
+    image: imgLoire 
+  },
+  { 
+    id: 'alsace', 
+    nom: 'Alsace', 
+    geo: 'Coteaux sous-vosgiens', 
+    desc: 'Ici, c\'est le cépage qui commande tout : le Riesling sera toujours "droit et citronné", tandis que le Gewurztraminer sera "exotique et parfumé".', 
+    color: 'bg-amber-600', 
+    image: null 
+  },
+  { 
+    id: 'beaujolais', 
+    nom: 'Beaujolais', 
+    geo: 'Le Sud de la Bourgogne', 
+    desc: 'Les villages au Nord (Crus) font des vins sérieux qui ressemblent à de la Bourgogne. Le Sud fait des vins "bonbons", légers et très faciles à boire.', 
+    color: 'bg-purple-900', 
+    image: imgBeaujolais 
+  },
+  { 
+    id: 'languedoc', 
+    nom: 'Languedoc', 
+    geo: 'L\'arc méditerranéen', 
+    desc: 'Plus tu montes en altitude (vers les montagnes), plus le vin est frais et élégant. Près de la mer, les vins sont plus denses, mûrs et "solaires".', 
+    color: 'bg-orange-900', 
+    image: imgLanguedoc 
+  },
+  { 
+    id: 'provence', 
+    nom: 'Provence', 
+    geo: 'Vins de Soleil', 
+    desc: 'Les rosés de bord de mer sont salins et très légers. Plus on rentre dans les terres, plus ils gagnent en structure et en goût de fruits rouges.', 
+    color: 'bg-pink-700', 
+    image: imgProvence 
+  },
+  { 
+    id: 'sud-ouest', 
+    nom: 'Sud Ouest', 
+    geo: 'Terroirs de caractère', 
+    desc: 'Cahors donne des vins "noirs" et très charpentés, tandis que les zones pyrénéennes (Jurançon) produisent des blancs vifs et ultra-exotiques.', 
+    color: 'bg-stone-800', 
+    image: imgSudOuest 
+  },
 ];
 
 export default function Appellations() {
@@ -50,7 +113,7 @@ export default function Appellations() {
               onClick={() => setSelectedRegion(region.id)}
               className="w-full text-left bg-white rounded-[32px] p-6 shadow-sm border border-stone-100 active:scale-[0.98] transition-all overflow-hidden relative group"
             >
-              <div className={`absolute top-0 right-0 w-24 h-24 ${region.color} opacity-5 rounded-full -mr-8 -mt-8 transition-transform group-hover:scale-110`} />
+              <div className={`absolute top-0 right-0 w-24 h-24 ${region.color} opacity-10 rounded-full -mr-8 -mt-8 transition-transform group-hover:scale-110`} />
               <h3 className="text-2xl font-serif font-bold text-stone-800 mb-1">{region.nom}</h3>
               <span className="text-[10px] bg-vin-bordeaux/10 text-vin-bordeaux px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter inline-block mb-3">
                 {region.geo}
@@ -96,9 +159,16 @@ export default function Appellations() {
                 <span className="text-[10px] font-bold uppercase tracking-widest">Focus sur les cépages</span>
               </div>
             )}
-            <div className="mt-4 flex gap-3 bg-vin-beige/50 p-4 rounded-2xl border border-vin-bordeaux/5">
-              <Info size={18} className="text-vin-bordeaux shrink-0 mt-0.5" />
-              <p className="text-[13px] text-stone-600 leading-relaxed italic">{currentRegion?.desc}</p>
+            <div className="mt-4 flex gap-3 bg-vin-bordeaux/5 p-4 rounded-2xl border border-vin-bordeaux/10">
+              <div className="shrink-0 w-8 h-8 bg-vin-bordeaux text-white rounded-full flex items-center justify-center shadow-sm">
+                <Info size={16} />
+              </div>
+              <div>
+                <span className="block text-[10px] font-black uppercase text-vin-bordeaux tracking-wider mb-1">Stratégie de dégustation</span>
+                <p className="text-[13px] text-stone-700 leading-snug italic">
+                  "{currentRegion?.desc}"
+                </p>
+              </div>
             </div>
           </div>
         )}
