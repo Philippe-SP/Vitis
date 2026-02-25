@@ -31,8 +31,8 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-vin-beige selection:bg-vin-bordeaux selection:text-white">
       
-      {/* HEADER : Effet Verre Poli (Native Feel) */}
-      <header className="fixed top-0 left-0 right-0 bg-vin-beige/80 backdrop-blur-xl border-b border-vin-bordeaux/5 z-[100] pt-8 pb-4">
+      {/* HEADER : z-index réduit à 40 pour passer sous les modales */}
+      <header className="fixed top-0 left-0 right-0 bg-vin-beige/80 backdrop-blur-xl border-b border-vin-bordeaux/5 z-[40] pt-8 pb-4">
         <div className="flex flex-col items-center">
           <span className="text-[9px] uppercase tracking-[0.6em] text-stone-400 mb-1 font-black">
             {tabs.find(t => t.id === activeTab)?.label || 'Vitis'}
@@ -44,7 +44,7 @@ function App() {
         </div>
       </header>
 
-      {/* CONTENU : Scroll fluide */}
+      {/* CONTENU */}
       <main className="flex-1 pt-40 pb-36 px-6 max-w-md mx-auto w-full overflow-x-hidden">
         <div 
           key={activeTab} 
@@ -54,7 +54,7 @@ function App() {
         </div>
       </main>
 
-      {/* NAVIGATION : Floating Dock Style (Glassmorphism Light) */}
+      {/* NAVIGATION */}
       <div className="fixed bottom-8 left-0 right-0 z-[100] px-4">
         <nav className="max-w-md mx-auto bg-white/70 backdrop-blur-2xl border border-white shadow-[0_20px_40px_rgba(0,0,0,0.08)] px-2 py-3 flex justify-around items-center h-20 rounded-[35px]">
           {tabs.map((tab) => {
@@ -67,7 +67,6 @@ function App() {
                 onClick={() => setActiveTab(tab.id)}
                 className="relative flex flex-col items-center justify-center flex-1 outline-none tap-highlight-transparent group"
               >
-                {/* L'icône qui s'anime */}
                 <div className={`p-3 rounded-2xl transition-all duration-500 ease-spring ${
                   isActive 
                     ? 'bg-vin-bordeaux text-white -translate-y-4 shadow-xl shadow-vin-bordeaux/25 scale-110' 
@@ -76,14 +75,12 @@ function App() {
                   <Icon size={22} strokeWidth={isActive ? 2.5 : 2} />
                 </div>
                 
-                {/* Label discret */}
                 <span className={`text-[8px] absolute -bottom-1 font-black tracking-tighter uppercase transition-all duration-300 ${
                   isActive ? 'opacity-100 translate-y-0 text-vin-bordeaux' : 'opacity-30 translate-y-2'
                 }`}>
                   {tab.label}
                 </span>
 
-                {/* Indicateur de point pour les onglets non-actifs au survol ou clic (optionnel) */}
                 {!isActive && (
                   <div className="absolute bottom-1 w-1 h-1 bg-stone-200 rounded-full opacity-0 group-active:opacity-100"></div>
                 )}
@@ -93,7 +90,6 @@ function App() {
         </nav>
       </div>
 
-      {/* Overlay pour masquer le scroll sous la barre de navigation si nécessaire */}
       <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-vin-beige to-transparent pointer-events-none z-40"></div>
     </div>
   );

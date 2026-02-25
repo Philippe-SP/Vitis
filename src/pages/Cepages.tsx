@@ -21,7 +21,6 @@ export default function Cepages() {
             onClick={() => setSelectedCepage(c)}
             className="bg-white p-5 rounded-[32px] shadow-sm border border-stone-100 transition-all active:scale-95 hover:border-vin-bordeaux/20"
           >
-            {/* ... (Reste de ton affichage de liste inchangé) */}
             <div className="flex justify-between items-start mb-3">
               <h3 className="font-bold text-xl text-stone-800">{c.nom}</h3>
               <span className={`text-[9px] uppercase tracking-widest px-2 py-1 rounded-lg font-black border ${
@@ -38,11 +37,14 @@ export default function Cepages() {
       </div>
 
       {selectedCepage && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-stone-900/60 backdrop-blur-sm p-4 transition-all">
-          <div className="bg-white w-full max-w-md rounded-[40px] p-8 shadow-2xl relative animate-in slide-in-from-bottom-10 duration-500">
+        <div className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center bg-stone-900/80 backdrop-blur-md p-4 transition-all overflow-y-auto">
+          {/* Overlay de fermeture */}
+          <div className="absolute inset-0" onClick={() => setSelectedCepage(null)} />
+
+          <div className="bg-white w-full max-w-md rounded-[40px] px-8 pb-8 pt-14 shadow-2xl relative animate-in slide-in-from-bottom-10 duration-500 max-h-[92vh] overflow-y-auto">
             <button 
               onClick={() => setSelectedCepage(null)}
-              className="absolute top-6 right-6 p-2 bg-stone-100 rounded-full text-stone-400 active:scale-90"
+              className="absolute top-5 right-5 p-2 bg-stone-100 rounded-full text-stone-500 active:scale-90 z-20"
             >
               <X size={20} />
             </button>
@@ -52,10 +54,8 @@ export default function Cepages() {
               <h3 className="text-3xl font-serif font-bold text-stone-800">{selectedCepage.nom}</h3>
             </div>
 
-            {/* GRILLE DE JAUGES TECHNIQUES */}
             <div className="grid grid-cols-1 gap-5 mb-8 bg-stone-50 p-6 rounded-[32px] border border-stone-100">
-              
-              {/* PUISSANCE - L'impact aromatique global */}
+              {/* Puissance */}
               <div className="space-y-2">
                 <div className="flex justify-between text-[10px] font-black uppercase text-stone-400">
                   <div className="flex items-center gap-1.5"><Zap size={12} className="text-amber-500"/> Puissance</div>
@@ -66,7 +66,7 @@ export default function Cepages() {
                 </div>
               </div>
 
-              {/* CORPS - La consistance en bouche */}
+              {/* Corps */}
               <div className="space-y-2">
                 <div className="flex justify-between text-[10px] font-black uppercase text-stone-400">
                   <div className="flex items-center gap-1.5"><Activity size={12} className="text-stone-600"/> Corps</div>
@@ -77,7 +77,7 @@ export default function Cepages() {
                 </div>
               </div>
 
-              {/* ACIDITÉ - La fraîcheur / le peps */}
+              {/* Acidité */}
               <div className="space-y-2">
                 <div className="flex justify-between text-[10px] font-black uppercase text-stone-400">
                   <div className="flex items-center gap-1.5"><Droplets size={12} className="text-blue-500"/> Acidité</div>
@@ -88,7 +88,7 @@ export default function Cepages() {
                 </div>
               </div>
 
-              {/* TANINS - Uniquement pour les rouges */}
+              {/* Tanins */}
               {selectedCepage.type === 'Rouge' && (
                 <div className="space-y-2">
                   <div className="flex justify-between text-[10px] font-black uppercase text-stone-400">
@@ -115,7 +115,7 @@ export default function Cepages() {
               </div>
 
               <div className="p-4 bg-vin-beige/20 rounded-2xl border border-vin-bordeaux/5">
-                <p className="text-sm text-stone-600 leading-relaxed italic">
+                <p className="text-sm text-stone-600 leading-relaxed italic text-center">
                   "{selectedCepage.description}"
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function Cepages() {
               onClick={() => setSelectedCepage(null)}
               className="w-full mt-8 py-4 bg-stone-900 text-white rounded-[24px] font-bold text-sm active:scale-95 transition-all shadow-lg"
             >
-              C'est noté
+              Fermer
             </button>
           </div>
         </div>
