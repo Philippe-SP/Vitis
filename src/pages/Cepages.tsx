@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Grape, MapPin, X, Activity, Droplets, Wind, Wine, Zap } from 'lucide-react';
+import { Grape, X, Activity, Droplets, Wind, Zap } from 'lucide-react';
 import cepagesData from '../data/cepages.json';
 
 export default function Cepages() {

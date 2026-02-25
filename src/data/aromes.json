@@ -1,0 +1,37 @@
+[
+  {
+    "categorie": "Fruité",
+    "couleur": "#e11d48",
+    "sousCategories": [
+      { "nom": "Fruits Rouges", "items": ["Fraise", "Framboise", "Cerise", "Groseille"] },
+      { "nom": "Fruits Noirs", "items": ["Mûre", "Cassis", "Myrtille", "Prune"] },
+      { "nom": "Fruits à noyau", "items": ["Abricot", "Pêche", "Cerise blanche"] },
+      { "nom": "Agrumes", "items": ["Citron", "Pamplemousse", "Zeste d'orange"] }
+    ]
+  },
+  {
+    "categorie": "Floral",
+    "couleur": "#d946ef",
+    "sousCategories": [
+      { "nom": "Fleurs", "items": ["Acacia", "Chèvrefeuille", "Rose", "Violette"] },
+      { "nom": "Herbacé", "items": ["Foin coupé", "Menthe", "Eucalyptus", "Poivron vert"] }
+    ]
+  },
+  {
+    "categorie": "Épicé & Boisé",
+    "couleur": "#92400e",
+    "sousCategories": [
+      { "nom": "Épices douces", "items": ["Vanille", "Cannelle", "Réglisse", "Clou de girofle"] },
+      { "nom": "Boisé", "items": ["Cèdre", "Chêne", "Tabac", "Fumé"] },
+      { "nom": "Poivré", "items": ["Poivre noir", "Poivre blanc"] }
+    ]
+  },
+  {
+    "categorie": "Minéral & Autre",
+    "couleur": "#0ea5e9",
+    "sousCategories": [
+      { "nom": "Minéral", "items": ["Pierre à fusil", "Craie", "Pétrole", "Iode"] },
+      { "nom": "Tertiaire", "items": ["Cuir", "Champignon", "Sous-bois", "Truffe"] }
+    ]
+  }
+]

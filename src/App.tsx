@@ -4,6 +4,7 @@ import Cepages from './pages/Cepages';
 import Notes from './pages/Notes';
 import Appellations from './pages/Vins';
 import Accords from './pages/Accords';
+import Aromes from './pages/Aromes';
 
 function App() {
   const [activeTab, setActiveTab] = useState('notes');
@@ -22,17 +23,8 @@ function App() {
       case 'vins': return <Appellations />;
       case 'accords': return <Accords />;
       case 'notes': return <Notes />;
-      default: return (
-        <div className="flex flex-col items-center justify-center py-20 text-center animate-in fade-in zoom-in duration-500">
-          <div className="w-20 h-20 bg-stone-200/50 rounded-full flex items-center justify-center mb-6 text-stone-400">
-            <Droplets size={40} strokeWidth={1.5} />
-          </div>
-          <h2 className="text-xl font-bold text-stone-800 tracking-tight">Espace Sensoriel</h2>
-          <p className="text-stone-500 mt-2 px-12 leading-relaxed text-sm">
-            La roue des arômes interactive arrive pour affiner votre palais.
-          </p>
-        </div>
-      );
+      case 'aromes': return <Aromes />;
+      default: return <Appellations />;
     }
   };
 
