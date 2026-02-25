@@ -1,44 +1,80 @@
 [
   {
-    "nom": "Comté (Vieux 24-36 mois)",
+    "nom": "Comté (Vieux 18-24 mois)",
     "famille": "Pâte pressée cuite",
-    "vins": ["Vin Jaune (Jura)", "Meursault", "Arbois Blanc"],
+    "vins": ["Vin Jaune (Jura)", "Chardonnay (Meursault)", "Arbois Blanc"],
     "conseil": "Le côté noisette du fromage appelle des vins blancs puissants ou oxydatifs."
   },
   {
-    "nom": "Mimolette Vieille",
+    "nom": "Saint-Marcellin",
+    "famille": "Pâte molle à croûte fleurie",
+    "vins": ["Côtes-du-Rhône Blanc", "Saint-Joseph Blanc", "Beaujolais (Gamay)"],
+    "conseil": "Très crémeux, il s'accorde avec la rondeur des blancs rhodaniens ou le fruit du Gamay."
+  },
+  {
+    "nom": "Morbier",
     "famille": "Pâte pressée non cuite",
-    "vins": ["Bordeaux Rouge évolué", "Haut-Médoc", "Cahors"],
-    "conseil": "Un des rares cas où un rouge charpenté fonctionne grâce à la texture cassante et saline du fromage."
+    "vins": ["Pinot Noir (Alsace)", "Arbois Rouge (Poulsard)", "Macon-Villages"],
+    "conseil": "Fromage tendre au goût fruité qui demande des rouges très légers ou des blancs secs."
   },
   {
     "nom": "Roquefort",
     "famille": "Pâte persillée",
-    "vins": ["Sauternes", "Banyuls", "Porto Blanc"],
+    "vins": ["Sauternes", "Banyuls", "Porto"],
     "conseil": "L'accord mythique sel/sucre. Le vin liquoreux vient calmer le piquant du bleu."
   },
   {
-    "nom": "Époisses / Maroilles",
+    "nom": "Bleu d'Auvergne",
+    "famille": "Pâte persillée",
+    "vins": ["Jurançon Moelleux", "Maury", "Côte-Rôtie"],
+    "conseil": "Un bleu puissant qui supporte soit un vin doux, soit un rouge très aromatique et poivré."
+  },
+  {
+    "nom": "Tomme de Savoie",
+    "famille": "Pâte pressée non cuite",
+    "vins": ["Chignin-Bergeron", "Mondeuse", "Apremont"],
+    "conseil": "Accord de terroir : la rusticité de la Tomme matche avec la vivacité des vins de Savoie."
+  },
+  {
+    "nom": "Reblochon",
     "famille": "Pâte molle à croûte lavée",
-    "vins": ["Marc de Bourgogne", "Gewurztraminer (Sec)", "Pinot Noir puissant"],
-    "conseil": "Fromages très forts qui demandent des vins avec du répondant aromatique."
+    "vins": ["Roussette de Savoie", "Chablis", "Crépy"],
+    "conseil": "Sa texture onctueuse nécessite un blanc avec une belle acidité pour rincer le palais."
+  },
+  {
+    "nom": "Époisses",
+    "famille": "Pâte molle à croûte lavée",
+    "vins": ["Marc de Bourgogne", "Gewurztraminer", "Pinot Noir évolué"],
+    "conseil": "Fromage très fort qui demande du répondant aromatique et de la puissance."
   },
   {
     "nom": "Camembert au lait cru",
     "famille": "Pâte molle à croûte fleurie",
-    "vins": ["Cidre Brut", "Saint-Émilion", "Champagne Blanc de Noirs"],
-    "conseil": "Le rouge doit avoir des tanins très souples (Merlot) pour ne pas heurter la croûte."
+    "vins": ["Cidre Brut", "Saint-Émilion (Merlot)", "Champagne"],
+    "conseil": "Évitez les rouges trop tanniques. Les bulles du Champagne tranchent bien le gras."
   },
   {
     "nom": "Crottin de Chavignol",
     "famille": "Chèvre",
-    "vins": ["Sancerre Blanc", "Pouilly-Fumé"],
+    "vins": ["Sancerre Blanc", "Pouilly-Fumé", "Menetou-Salon"],
     "conseil": "L'accord régional parfait : le Sauvignon Blanc de la Loire et le chèvre."
   },
   {
     "nom": "Ossau-Iraty",
     "famille": "Brebis",
-    "vins": ["Irouléguy Blanc", "Jurançon Sec"],
-    "conseil": "Les vins blancs du Sud-Ouest avec leur vivacité tranchent bien le gras du brebis."
+    "vins": ["Irouléguy Blanc", "Jurançon Sec", "Graves Blanc"],
+    "conseil": "Les blancs du Sud-Ouest avec leur tension équilibrent parfaitement le gras du brebis."
+  },
+  {
+    "nom": "Beaufort",
+    "famille": "Pâte pressée cuite",
+    "vins": ["Chardonnay (Jura)", "Roussette de Savoie", "Hermitage Blanc"],
+    "conseil": "Le 'Prince des Gruyères' mérite un blanc complexe, ample et légèrement boisé."
+  },
+  {
+    "nom": "Brie de Meaux",
+    "famille": "Pâte molle à croûte fleurie",
+    "vins": ["Pinot Noir (Bourgogne)", "Pomerol", "Vouvray Sec"],
+    "conseil": "Ses notes de sous-bois s'accordent merveilleusement avec l'élégance du Pinot Noir."
   }
 ]
