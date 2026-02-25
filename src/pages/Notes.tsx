@@ -1,4 +1,4 @@
-import { PenLine, Wine, Star, Trash2 } from 'lucide-react';
+import { PenLine, Wine, Star, Trash2, Edit2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import AddNote from './AddNote';
 import type { Note } from '../types';
@@ -6,31 +6,53 @@ import type { Note } from '../types';
 export default function Notes() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [notes, setNotes] = useState<Note[]>([]);
+  // Nouvel état pour savoir quelle note on est en train d'éditer
+  const [noteToEdit, setNoteToEdit] = useState<Note | null>(null);
 
-  // Charger les notes au démarrage
   useEffect(() => {
     const saved = localStorage.getItem('vitis-notes');
     if (saved) setNotes(JSON.parse(saved));
   }, []);
 
-  const saveNote = (newNote: Note) => {
-    const updatedNotes = [newNote, ...notes];
-    setNotes(updatedNotes);
-    localStorage.setItem('vitis-notes', JSON.stringify(updatedNotes));
-    setIsModalOpen(false);
+  // Fonction hybride : Ajout ou Mise à jour
+  const handleSave = (updatedNote: Note) => {
+    let newNotes;
+    const exists = notes.find(n => n.id === updatedNote.id);
+
+    if (exists) {
+      // Cas Edition : on remplace la note existante
+      newNotes = notes.map(n => n.id === updatedNote.id ? updatedNote : n);
+    } else {
+      // Cas Création : on ajoute au début
+      newNotes = [updatedNote, ...notes];
+    }
+
+    setNotes(newNotes);
+    localStorage.setItem('vitis-notes', JSON.stringify(newNotes));
+    closeModal();
   };
 
-  /* --- Suppression d'une note --- */
-  const deleteNote = (id: string) => {
-  if (window.confirm("Supprimer cette dégustation ?")) {
-    const updatedNotes = notes.filter(n => n.id !== id);
-    setNotes(updatedNotes);
-    localStorage.setItem('vitis-notes', JSON.stringify(updatedNotes));
-  }
-};
+  const deleteNote = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Évite d'ouvrir l'édition en cliquant sur supprimer
+    if (window.confirm("Supprimer cette dégustation ?")) {
+      const updatedNotes = notes.filter(n => n.id !== id);
+      setNotes(updatedNotes);
+      localStorage.setItem('vitis-notes', JSON.stringify(updatedNotes));
+    }
+  };
+
+  const openEdit = (note: Note) => {
+    setNoteToEdit(note);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setNoteToEdit(null);
+  };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-20">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-serif font-bold text-stone-800">Mes Notes</h2>
         <span className="text-sm bg-stone-200 text-stone-600 px-3 py-1 rounded-full font-bold">
@@ -46,7 +68,6 @@ export default function Notes() {
         Nouvelle dégustation
       </button>
 
-      {/* Liste des notes */}
       <div className="space-y-4">
         {notes.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20 text-center border-2 border-dashed border-stone-200 rounded-3xl">
@@ -55,32 +76,50 @@ export default function Notes() {
           </div>
         ) : (
           notes.map(note => (
-            <div key={note.id} className="bg-white p-5 rounded-3xl shadow-sm border border-stone-100 relative group">
+            <div 
+              key={note.id} 
+              onClick={() => openEdit(note)} // L'ensemble de la carte devient cliquable pour éditer
+              className="bg-white p-5 rounded-3xl shadow-sm border border-stone-100 relative group active:scale-[0.98] transition-all"
+            >
               <button 
-                onClick={() => deleteNote(note.id)}
-                className="absolute top-2 right-2 p-3 text-stone-300 active:text-red-500 transition-colors z-20"
-                aria-label="Supprimer la note"
+                onClick={(e) => deleteNote(note.id, e)}
+                className="absolute top-2 right-2 p-3 text-stone-300 hover:text-red-500 transition-colors z-20"
               >
-                <Trash2 size={20} />
+                <Trash2 size={18} />
               </button>
               
-              <div className="flex justify-between items-start mb-2 pr-8"> {/* Ajout de pr-8 pour ne pas chevaucher la poubelle */}
+              <div className="flex justify-between items-start mb-2 pr-8">
                 <div>
                   <h3 className="font-bold text-lg text-stone-800 leading-tight">{note.nom || 'Cuvée Classique'}</h3>
-                  <p className="text-xs text-vin-bordeaux font-bold uppercase">{note.domaine} — {note.millesime}</p>
+                  <p className="text-[10px] text-vin-bordeaux font-bold uppercase tracking-wider">{note.domaine} — {note.millesime}</p>
                 </div>
-                <div className="flex text-amber-500 bg-amber-50 px-2 py-1 rounded-lg">
-                  <Star size={14} fill="currentColor" />
+                <div className="flex items-center text-amber-500 bg-amber-50 px-2 py-1 rounded-lg shrink-0">
+                  <Star size={12} fill="currentColor" />
                   <span className="ml-1 text-xs font-bold">{note.noteGlobale}</span>
                 </div>
               </div>
-              {/* ... reste du contenu de la carte ... */}
+              
+              <p className="text-xs text-stone-500 italic line-clamp-2">
+                {note.commentaire || "Pas de commentaire..."}
+              </p>
+
+              <div className="mt-3 flex justify-end">
+                 <div className="text-[10px] font-bold text-stone-300 flex items-center gap-1">
+                   <Edit2 size={10} /> Modifier
+                 </div>
+              </div>
             </div>
           ))
         )}
       </div>
 
-      {isModalOpen && <AddNote onClose={() => setIsModalOpen(false)} onSave={saveNote} />}
+      {isModalOpen && (
+        <AddNote 
+          onClose={closeModal} 
+          onSave={handleSave} 
+          noteToEdit={noteToEdit} // On passe la note à éditer
+        />
+      )}
     </div>
   );
 }

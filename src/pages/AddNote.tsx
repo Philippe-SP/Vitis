@@ -6,45 +6,51 @@ import appelsData from '../data/appellations.json';
 interface AddNoteProps {
   onClose: () => void;
   onSave: (note: Note) => void;
+  noteToEdit?: Note | null; // Optionnel pour la création
 }
 
-export default function AddNote({ onClose, onSave }: AddNoteProps) {
+export default function AddNote({ onClose, onSave, noteToEdit }: AddNoteProps) {
+  // Initialisation intelligente : si noteToEdit existe, on prend ses valeurs, sinon valeurs par défaut
   const [formData, setFormData] = useState({
-    nom: '',
-    appellation: '',
-    domaine: '',
-    millesime: new Date().getFullYear(),
-    noteGlobale: 3,
-    commentaire: ''
+    nom: noteToEdit?.nom || '',
+    appellation: noteToEdit?.appellation || '',
+    domaine: noteToEdit?.domaine || '',
+    millesime: noteToEdit?.millesime || new Date().getFullYear(),
+    noteGlobale: noteToEdit?.noteGlobale || 3,
+    commentaire: noteToEdit?.commentaire || ''
   });
 
-  // Validation : Vérifie si les champs obligatoires sont remplis
   const isFormValid = 
     formData.domaine.trim() !== '' && 
     formData.appellation !== '' && 
-    formData.commentaire.trim().length > 5; // On force un petit commentaire
+    formData.commentaire.trim().length > 5;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isFormValid) return;
 
-    const newNote: Note = {
+    const finalNote: Note = {
       ...formData,
-      id: crypto.randomUUID(),
-      date: new Date().toLocaleDateString('fr-FR')
+      // Si on édite, on garde l'ID et la date d'origine, sinon on génère
+      id: noteToEdit ? noteToEdit.id : crypto.randomUUID(),
+      date: noteToEdit ? noteToEdit.date : new Date().toLocaleDateString('fr-FR')
     };
-    onSave(newNote);
+    
+    onSave(finalNote);
   };
 
   return (
     <div className="fixed inset-0 bg-stone-50 z-[100] flex flex-col animate-in slide-in-from-bottom duration-300">
+      {/* Header */}
       <div className="p-4 border-b border-stone-200 bg-white flex justify-between items-center">
-        <button onClick={onClose} className="p-2 text-stone-400"><X size={24} /></button>
-        <h2 className="font-serif font-bold text-lg text-stone-800">Nouvelle dégustation</h2>
+        <button onClick={onClose} className="p-2 text-stone-400 active:scale-90"><X size={24} /></button>
+        <h2 className="font-serif font-bold text-lg text-stone-800">
+          {noteToEdit ? 'Modifier la note' : 'Nouvelle dégustation'}
+        </h2>
         <button 
           onClick={handleSubmit} 
           disabled={!isFormValid}
-          className={`p-2 transition-opacity ${isFormValid ? 'text-vin-bordeaux opacity-100' : 'text-stone-300 opacity-50'}`}
+          className={`p-2 transition-opacity ${isFormValid ? 'text-vin-bordeaux' : 'text-stone-300'}`}
         >
           <Save size={24} />
         </button>
@@ -97,7 +103,7 @@ export default function AddNote({ onClose, onSave }: AddNoteProps) {
               type="number" 
               className="w-full p-4 bg-white border border-stone-200 rounded-2xl outline-none"
               value={formData.millesime}
-              onChange={e => setFormData({...formData, millesime: parseInt(e.target.value)})}
+              onChange={e => setFormData({...formData, millesime: parseInt(e.target.value) || 2024})}
             />
           </div>
         </div>
@@ -123,18 +129,12 @@ export default function AddNote({ onClose, onSave }: AddNoteProps) {
             required
             rows={5}
             className="w-full p-4 bg-white border border-stone-200 rounded-2xl outline-none"
-            placeholder="Œil (Robe, reflets)&#10;Nez (Intensité, arômes)&#10;Bouche (Attaque, équilibre, longueur)..."
+            placeholder="Œil, Nez, Bouche..."
             value={formData.commentaire}
             onChange={e => setFormData({...formData, commentaire: e.target.value})}
           />
         </div>
 
-        {!isFormValid && (
-          <p className="text-[10px] text-center text-stone-400 italic">
-            Veuillez remplir les champs marqués d'une * pour enregistrer.
-          </p>
-        )}
-        {/* Bouton de validation principal */}
         <div className="pt-4">
           <button 
             type="submit" 
@@ -145,14 +145,8 @@ export default function AddNote({ onClose, onSave }: AddNoteProps) {
                 : 'bg-stone-200 text-stone-400 cursor-not-allowed'
             }`}
           >
-            {isFormValid ? 'Enregistrer la dégustation' : 'Compléter les champs *'}
+            {noteToEdit ? 'Mettre à jour' : 'Enregistrer la dégustation'}
           </button>
-          
-          {!isFormValid && (
-            <p className="text-[10px] text-center text-stone-400 mt-3 italic">
-              Il manque le producteur, l'appellation ou un petit commentaire !
-            </p>
-          )}
         </div>
       </form>
     </div>
