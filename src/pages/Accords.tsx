@@ -4,20 +4,30 @@ import type { Accord } from '../types';
 import accordsFromages from '../data/accords_fromages.json';
 import accordsPlats from '../data/accords_plats.json';
 
+// Fonction de normalisation pour ignorer les accents et la casse
+const normalize = (str: string) => 
+  str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
 export default function Accords() {
   const [activeSubTab, setActiveSubTab] = useState<'plats' | 'fromages'>('plats');
   const [search, setSearch] = useState('');
 
-  // 1. On choisit la source de données
+  // 1. Sélection de la source de données
   const currentData: Accord[] = activeSubTab === 'fromages' 
     ? (accordsFromages as Accord[]) 
     : (accordsPlats as Accord[]);
 
-  // 2. On filtre selon la recherche
-  const filteredData = currentData.filter(item => 
-    item.nom.toLowerCase().includes(search.toLowerCase()) ||
-    item.famille.toLowerCase().includes(search.toLowerCase())
-  );
+  // 2. Filtrage avec normalisation (Correction des variables data et searchTerm)
+  const filteredData = currentData.filter((item) => {
+    const normalizedSearch = normalize(search);
+    const normalizedName = normalize(item.nom);
+    const normalizedFamille = normalize(item.famille);
+
+    return (
+      normalizedName.includes(normalizedSearch) || 
+      normalizedFamille.includes(normalizedSearch)
+    );
+  });
 
   return (
     <div className="space-y-6">
