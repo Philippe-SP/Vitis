@@ -191,7 +191,7 @@ export default function Appellations() {
                 {app.style}
               </span>
             </div>
-            <p className="text-[10px] text-vin-bordeaux/60 mb-3 uppercase tracking-[0.1em] font-black">{app.cepages.join(' • ')}</p>
+            <p className="text-[10px] text-vin-bordeaux/60 mb-3 uppercase tracking-[0.1em] font-black">{app.cepages}</p>
             <p className="text-sm text-stone-500 leading-relaxed">{app.description}</p>
           </div>
         ))}
